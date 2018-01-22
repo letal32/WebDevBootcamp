@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+	<h1>Register</h1>
+
+	<form>
+		
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<label for="firstName">First Name:</label>
+						<input type="text" name="firstName" id="firstName" placeholder="John" required>
+					</td>
+					<td>
+						<label for="lastName">Last Name:</label>
+						<input type="text" name="lastName" id="lastName" placeholder="Smith" required>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="radio" name="gender" value="male" id="genderMale">
+						<label for="genderMale">Male</label>
+
+						<input type="radio" name="gender" value="female" id="genderFemale">
+						<label for="genderFemale">Female</label>
+
+						<input type="radio" name="gender" value="male" id="genderOther">
+						<label for="genderOther">Other</label>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="email">Email:</label>
+						<input type="email" name="email" placeholder="Your email" id="email" required>
+					</td>
+
+					<td>
+						<label for="email">Password:</label>
+						<input type="password" name="password" placeholder="Your password" id="password" pattern=".{5,10}" title="5 to 10 characters" required>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="year">Birthday:</label>
+						<select id="year" name="year">
+							<option  selected>Year</option>
+							<option>1992</option>
+							<option>1993</option>
+							<option>1994</option>
+						</select>
+
+						<select id="month" name="month">
+							<option selected>Month</option>
+							<option>January</option>
+							<option>February</option>
+							<option>March</option>
+						</select>
+
+						<select id="day" name="day">
+							<option selected>Day</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label for="acceptCond">I agree to the terms and conditions: </label>
+						<input type="checkbox" name="acceptCond" id="acceptCond" required>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="submit" name="Submit" value="Submit">
+	</form>
+
+</body>
+</html>
