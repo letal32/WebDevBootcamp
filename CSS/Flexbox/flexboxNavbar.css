@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+}
+
+.search {
+  flex: 1;
+}
+
+.container > li {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+  box-sizing: border-box;
+  background-color: #96ceb4;
+  list-style-type: none;
+}
+
+@media all and (max-width: 600px) {
+  
+  .container {
+    flex-wrap: wrap;
+  }
+  
+  .container > li {
+    flex-basis: 50%;
+  }
+
+}
+
+@media all and (max-width: 400px) {
+  .container > li {
+    flex-basis: 100%;
+  }
+  .search {
+    order: 1;
+  }
+}

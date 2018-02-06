@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Change Button</title>
+
+</head>
+<body>
+
+    <button>Click Me!</button>
+
+
+
+    <script type="text/javascript">
+
+        var isYellow = false;
+
+        document.querySelector("button").addEventListener("click", function(){
+            if (isYellow){
+                document.body.style.background = "white";
+            } else {
+                document.body.style.background = "yellow";
+            }
+
+            isYellow = !isYellow;
+        });    
+    </script>
+
+</body>
+</html>
