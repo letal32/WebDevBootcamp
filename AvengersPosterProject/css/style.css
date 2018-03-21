@@ -1,0 +1,71 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.poster-content{
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  width: 650px;
+  margin: auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.poster-content .release-date {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Audiowide', cursive;
+    margin-bottom: 8px;
+}
+
+.poster-content iframe {
+    width: 100%;
+    height: 315px;
+    border: 2px solid #ddd;
+}
+
+.poster-content header {
+    display: inline-block;
+}
+
+.poster-content header h1 {
+    color: #fff;
+    font-size: 48px;
+    margin: 16px;
+    margin-bottom: 0;
+    font-family: avengersFont;
+}
+
+.poster-content header h2 {
+    color: #fff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin-top: 0;
+    font-family: 'Audiowide', cursive;
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+
+.poster-content header {
+    text-align: center;
+}
+
+.full-bg{
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/bg-avengers.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 1px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+@font-face {
+    font-family: avengersFont;
+    src: url("../fonts/AvengeanceHeroicAvengerNormal.woff") format("woff");
+}
