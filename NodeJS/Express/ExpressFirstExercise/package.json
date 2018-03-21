@@ -1,0 +1,14 @@
+{
+  "name": "expressfirstexercise",
+  "version": "1.0.0",
+  "description": "Small exercise from dev bootcamp on Udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco Stellin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
