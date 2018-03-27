@@ -1,6 +1,8 @@
 var express    = require("express");
 var bodyParser = require("body-parser");
 var mongoose   = require("mongoose");
+var seedDB     = require("./seeds");
+var Campground = require("./models/campground");
 var app        = express();
 
 mongoose.connect("mongodb://localhost/yelp_camp");
@@ -8,21 +10,7 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-//Schema setup
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-var Campground = mongoose.model("Campground", campgroundSchema);
-
-
-// var campgrounds = [
-//         {name: "Salmon Creek", image: "https://www.fs.usda.gov/Internet/FSE_MEDIA/stelprdb5306226.jpg"},
-//         {name: "Granite Hill", image: "https://www.reserveamerica.com/webphotos/NH/pid270015/0/540x360.jpg"},
-//         {name: "Mountain Goat's Rest", image: "http://haulihuvila.com/wp-content/uploads/2012/09/hauli-huvila-campgrounds-lg.jpg"}
-//     ];
+seedDB();
 
 app.get("/", function(req,res){
     res.render("landing");
@@ -48,10 +36,11 @@ app.get("/campgrounds/new", function(req,res){
 //Show more info about campground
 app.get("/campgrounds/:id", function(req, res){
     //Find the campground with provided id
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err){
             console.log(err);
         } else {
+            console.log(foundCampground);
             res.render("show", {campground: foundCampground});
         }
     });
